@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Ticket</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+        <link rel="stylesheet" href="common.css"> 
+        <link rel="stylesheet" href="sidebar/sidebar.css"> 
+        <script src="sidebar/sidebar.js"></script> 
+    </head>
+
+    <!-- Navbar -->  
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <span class="px-2" style="width: 100%;">
+            <span class="flex">
+                <button id="back-button" type="button" class="btn btn-primary fa fa-arrow-left mx-1 btn-icon"></button>
+                <button id="menu" type="button" class="btn btn-primary fa fa-bars mx-1 btn-icon" onclick="toggleSidebar()"></button>
+            </span>
+            <span class="flex float-end">
+                <button id="profile" type="button" class="btn btn-primary fa fa-user mx-1 btn-icon" ></button>
+                <button id="notification" type="button" class="btn btn-primary fa fa-bell mx-1 btn-icon"></button>
+            </span>
+        </span>
+    </nav>
+
+    <!-- Body -->  
+    <body style="margin-top:70px; min-height: 100vh; min-width: 100wh;">
+        
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar-style">
+            <button id="home" type="button" class="btn btn-outline-light sidebar-button">Home</button>
+            <button id="home" type="button" class="btn btn-outline-light sidebar-button">Profile</button>
+            <button id="home" type="button" class="btn btn-outline-light sidebar-button">Logout</button>
+        </div>
+
+        <!-- Add new ticket -->
+        <div class="rounded m-2 p-2 border shadow" style="min-height: 85vh;">
+            <!-- Select ticket type and police station -->
+            <span class="row mb-3">
+                <span class="col" style="min-width: 350px; max-width: 480px;">
+                    <h6>Police Station</h6>
+                    <select id="ticket-type" class="form-select"></select>
+                </span>
+                
+            </span>
+            <!-- Message -->
+            <h6>Users</h6>
+            <hr></hr>
+            <span class="row mb-3">
+                <span class="col" style="min-width: 250px; max-width: 480px;">
+                   
+                   
+                    <div class="row" id="div1">
+                        <div class="col-xs-2 col-md-6">
+                        <div class=" fa fa-circle " style="color: #0d6efd;" ></div> user-profile <button class=" fa fa-trash btn-danger"  ></button></div>
+                        <div class="col-xs-1 col-md-1">Role</div>
+                        <div class="col-xs-2 col-md-4 mb-3"><select id="ticket-type" class="form-select" style="min-width: 250px; max-width: 480px;"></select></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-md-6">
+                        <button class=" fa fa-plus btn-primary"  id="addrow1" value="addrow1"  ></button> 
+                        </div>
+                    </div>
+                </span>
+               
+                
+            </span>
+            <h6>Officers</h6>
+            <hr></hr>
+            <span class="row mb-3">
+                <span class="col" style="min-width: 250px; max-width: 480px;">
+                   
+                   
+                    <div class="row" id="div2">
+                        <div class="col-xs-2 col-md-6">
+                        <div class=" fa fa-circle " style="color: #0d6efd;" ></div> user-profile  <button class=" fa fa-trash btn-danger"  ></button></div>
+                        <div class="col-xs-1 col-md-1">Role</div>
+                        <div class="col-xs-2 col-md-4  mb-3"><select id="ticket-type" class="form-select" style="min-width: 250px; max-width: 480px;"></select></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-md-6">
+                        <button class=" fa fa-plus btn-primary"   id="addrow2" value="addrow2"></button> 
+                        </div>
+                    </div>
+                </span>
+               
+                
+            </span>
+            <h6>Inherited</h6>
+            <hr></hr>
+            <span class="row mb-3">
+                <span class="col" style="min-width: 250px; max-width: 480px;">
+                   
+                   
+                    <div class="row" id="div3">
+                        <div class="col-xs-2 col-md-6">
+                        <div class=" fa fa-circle " style="color: #0d6efd;" ></div> user-profile   <button class=" fa fa-trash btn-danger"  ></button> </div>
+                        <div class="col-xs-1 col-md-1">Role</div>
+                        <div class="col-xs-2 col-md-4  mb-3"><select id="ticket-type" class="form-select" style="min-width: 250px; max-width: 480px;"></select></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-2 col-md-6">
+                        <button class=" fa fa-plus btn-primary" id="addrow3" value="addrow3" ></button> 
+                        </div>
+                    </div>
+                </span>
+               
+                
+            </span>
+
+           
+        </div>
+       
+        <script>
+        $(document).ready(function(){
+        
+        $("#addrow1").click(function(){
+$("#div1").append(" <div class='col-xs-2 col-md-6'><div class=' fa fa-circle ' style='color: #0d6efd;' ></div> user-profile  <button class=' fa fa-trash btn-danger mb-3'  ></button></div><div class='col-xs-1 col-md-1'></div>");
+        });
+        $("#addrow2").click(function(){
+$("#div2").append(" <div class='col-xs-2 col-md-6'><div class=' fa fa-circle ' style='color: #0d6efd;' ></div> user-profile  <button class=' fa fa-trash btn-danger mb-3'  ></button></div><div class='col-xs-1 col-md-1'></div>");
+        });
+        $("#addrow3").click(function(){
+$("#div3").append(" <div class='col-xs-2 col-md-6'><div class=' fa fa-circle ' style='color: #0d6efd;' ></div> user-profile  <button class=' fa fa-trash btn-danger mb-3'  ></button></div><div class='col-xs-1 col-md-1'></div>");
+        });
+        });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+            crossorigin="anonymous">
+        </script>
+        <script src="add_ticket/add_ticket.js"></script>
+    </body>
+</html>
